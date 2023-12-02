@@ -1,0 +1,17 @@
+@import '../variables/index';
+
+@mixin mobile {
+    @media only screen and (max-width: $mobile) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media only screen and (max-width: $tablet) {
+        @content;
+    }
+}
+@mixin tabletLg {
+    @media only screen and (max-width: $tabletLg) {
+        @content;
+    }
+}

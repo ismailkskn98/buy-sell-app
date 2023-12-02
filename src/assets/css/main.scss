@@ -1,0 +1,29 @@
+@import 'base/index',
+        'extends/extends',
+        'media-query/media-query',
+        'components/index',
+        'pages/index',
+        'variables/index';
+
+        
+.container {
+    @extend %flex-center;
+    background-color: $bg-color;
+    color: white;
+    // &:hover {
+    //     background-color: aquamarine;
+    //     color: black;
+    // }
+    @include tabletLg {
+        background-color: darkred;
+        color: black;
+    }
+    @include tablet {
+        background-color: blue;
+        color: black;
+    }
+    @include mobile {
+        background-color: navy;
+        color: white;
+    }
+}

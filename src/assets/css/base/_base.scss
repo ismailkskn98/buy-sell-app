@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import '../variables/index',
+        '../media-query/media-query';
+
+html{
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background-color: $bg-color;
+    color: $text-color;
+}
+
+.container {
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+    @include tabletLg{
+        max-width: 960px;
+    }
+    @include tablet{
+        max-width: 720px;
+    }
+    @include mobile{
+        max-width: 540px;
+    }
+}
