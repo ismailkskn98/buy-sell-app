@@ -1,9 +1,11 @@
 <template>
-    <appForm />
+    <div>
+
+    </div>
 </template>
 
 <script setup>
-import appForm from '../components/appForm.vue'
+
 </script>
 
 <style lang="scss" scoped></style>

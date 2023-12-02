@@ -1,5 +1,7 @@
 <template>
-  <RouterView />
+  <Component :is="$route.meta.componentLayout">
+    <RouterView />
+  </Component>
 </template>
 
 <script setup>

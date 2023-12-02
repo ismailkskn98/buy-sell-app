@@ -1,0 +1,45 @@
+@import '../extends/extends';
+@import '../variables/index';
+form {
+    @extend %flex-center;
+    flex-direction: column;
+    justify-content: space-around !important;
+    min-width: 100%;
+    min-height: 100%;
+    h1 {
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+        font-size: $xlFonts;
+    }
+    .form-group {
+        @extend %flex-center;
+        align-items: flex-start !important;
+        flex-direction: column;
+        min-width: inherit;
+        input {
+            @extend %input;
+            margin-bottom: 1.25rem;
+            margin-top: 10px;
+            width: 100%;
+            background-color: transparent;
+            border-bottom: 1px solid rgb(201, 201, 201);
+            color: $sign-text-color;
+            transition: all .2s ease;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            &:hover {
+                background: rgba($color: #000000, $alpha: .1);
+            }
+            &:focus {
+                background: rgba($color: #000000, $alpha: .1);
+            }
+        }
+    }
+    button {
+        @extend %button;
+        margin-top: 1.5rem;
+
+    }
+    p {
+        margin: 1.5rem 0;
+    }
+}

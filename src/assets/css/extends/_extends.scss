@@ -1,6 +1,29 @@
 // @extend %flex-center;
+@import '../variables/index';
 %flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+%button {
+    padding: .8rem 2rem;
+    border: none;
+    border-radius: 3px;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    font-size: $btnFonts;
+    transition: all .2s ease;
+    text-transform: uppercase;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    &:hover {
+        background-color: darkgray;
+    }
+}
+%input {
+    padding: 1rem;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    font-size: $btnFonts;
+    letter-spacing: 1.5px;
 }
