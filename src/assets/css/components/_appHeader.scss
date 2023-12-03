@@ -1,0 +1,15 @@
+@import '../extends/extends';
+@import '../variables/index';
+header {
+    @extend %flex-nav;
+    padding: 0 1.25rem;
+    background-color: $nav-bg-color;
+    box-shadow: rgba(0, 0, 0, 0.15) 1px 3px 1px;
+    .icon {
+        cursor: pointer;
+        transition: all .2s ease;
+        &:hover {
+            color: #d9d6d66b;
+        }
+    }
+}

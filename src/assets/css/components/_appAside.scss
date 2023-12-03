@@ -1,0 +1,44 @@
+@import '../variables/index',
+        '../extends/extends';
+aside {
+    padding: 1.25rem;
+    background-color: $nav-bg-color;
+    border-right: 1px solid  $nav-bg-color;
+    box-shadow: rgba(0, 0, 0, 0.15) 3px 3px 1px;
+    transition: all .2s ease-in;
+    ul {
+        li{
+            a {
+               @extend %flex-center;
+               justify-content: flex-start !important;
+                text-decoration: none;
+                color: $text-color;
+                margin: 0 -20px;
+                margin-bottom: 1rem;
+                padding: 1rem 20px;
+                text-transform: capitalize;
+                transition: all .2s ease;
+                &:hover {
+                    background-color: #d9d6d611;
+                }
+                span {
+                    margin-right: 2rem;
+                }
+                p {
+                    width: 100%;
+                    white-space: nowrap;
+                    text-overflow:ellipsis;
+                }
+            }
+        }
+    }
+    @include tablet {
+        overflow: hidden;
+    }
+    @include mobile {
+        overflow: hidden;
+    }
+}
+aside.activeBtn {
+    overflow: hidden;
+}

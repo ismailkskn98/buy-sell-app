@@ -1,7 +1,7 @@
 @import '../extends/extends';
 @import '../variables/index';
 form {
-    @extend %flex-center;
+    @extend %flex-nav;
     flex-direction: column;
     justify-content: space-around !important;
     min-width: 100%;
