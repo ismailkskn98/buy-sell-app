@@ -4,11 +4,13 @@
         <h1 v-else-if="$route.fullPath === '/signup'">Kayıt Ol</h1>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" placeholder="Email giriniz" name="email">
+            <input type="email" style="font-family:'Roboto', sans-serif, FontAwesome; font-size: small;"
+                placeholder="&#xf0e0; Email giriniz" name="email">
         </div>
         <div class="form-group">
             <label for="password">Parola</label>
-            <input type="password" placeholder="Parolanızı giriniz" name="password">
+            <input type="password" style="font-family:'Roboto', sans-serif, FontAwesome; font-size: small;"
+                placeholder="&#xf084; Parolanızı giriniz" name="password">
         </div>
         <button v-if="$route.fullPath === '/signin'">Giriş Yap</button>
         <button v-else-if="$route.fullPath === '/signup'">Kayıt Ol</button>

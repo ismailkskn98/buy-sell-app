@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from '../views/HomeView.vue'
 import AuthLayout from '../layouts/AuthLayout.vue'
-import MainLayout from '../layouts/AuthLayout.vue'
+import MainLayout from '../layouts/MainLayout.vue'
 const routes = [
     {
         path: '/',
@@ -19,7 +19,7 @@ const routes = [
         component: () => import('../views/SigninView.vue'),
         meta: {
             layout: 'Auth',
-            componentLayout: MainLayout,
+            componentLayout: AuthLayout,
             public: true,
         }
     },
@@ -29,7 +29,7 @@ const routes = [
         component: () => import('../views/SignupView.vue'),
         meta: {
             layout: 'Auth',
-            componentLayout: MainLayout,
+            componentLayout: AuthLayout,
             public: true,
         }
     },

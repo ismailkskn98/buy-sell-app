@@ -21,16 +21,16 @@ form {
             margin-bottom: 1.25rem;
             margin-top: 10px;
             width: 100%;
-            background-color: transparent;
+            background: rgba(240,240,240);
             border-bottom: 1px solid rgb(201, 201, 201);
             color: $sign-text-color;
             transition: all .2s ease;
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
             &:hover {
-                background: rgba($color: #000000, $alpha: .1);
+                background: rgba($color: #ffffff, $alpha: 1);
             }
             &:focus {
-                background: rgba($color: #000000, $alpha: .1);
+                background: rgba($color: #ffffff, $alpha: 1);
             }
         }
     }

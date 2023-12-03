@@ -1,23 +1,27 @@
 @import '../extends/extends',
         '../variables/index',
         '../media-query/media-query';
-.container {
-    @extend %flex-center;
-    min-width: 100% !important;
-    height: 100vh;
-    padding: 1.25rem;
-    .form-box {
+.auth-layout-wrapper {
+    background: rgb(218,216,255);
+    background: linear-gradient(333deg, rgba(218,216,255,1) 0%, rgba(218,219,255,1) 35%, rgba(131,234,255,1) 100%);
+    .container {
         @extend %flex-center;
-        background-color: $sign-bg-color;
-        color: $sign-text-color;
-        padding: 3rem;
-        border-radius: 3px;
-        max-width: 570px;
-        width: 100%;
-        max-height: 470px;
-        height: 90%;
-        @include mobile {
-            padding: 1rem;
+        height: 100vh;
+        padding: 1.25rem;
+        .form-box {
+            @extend %flex-center;
+            background-color: $sign-bg-color;
+            color: $sign-text-color;
+            padding: 3rem;
+            border-radius: 3px;
+            max-width: 570px;
+            width: 100%;
+            max-height: 470px;
+            height: 90%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            @include mobile {
+                padding: 1rem;
+            }
         }
     }
 }
