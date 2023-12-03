@@ -1,0 +1,20 @@
+.main-layout {
+    display: grid;
+    min-width: 100%;
+    height: 100vh;
+    grid-template-areas:
+    "head head"
+    "side  main"
+    "side  main";
+  grid-template-rows: 70px 1fr 1fr;
+  grid-template-columns: minmax(200px, 300px) 1fr;
+    header {
+        grid-area: head;
+    }
+    aside {
+        grid-area: side;
+    }
+    main {
+        grid-area: main;
+    }
+}
