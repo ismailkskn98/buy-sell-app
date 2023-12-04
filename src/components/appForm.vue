@@ -3,14 +3,19 @@
         <h1 v-if="$route.fullPath === '/signin'">Giriş Yap</h1>
         <h1 v-else-if="$route.fullPath === '/signup'">Kayıt Ol</h1>
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" style="font-family:'Roboto', sans-serif, FontAwesome; font-size: small;"
-                placeholder="&#xf0e0; Email giriniz" name="email">
+            <input :class="{ 'error': v$.email.$error }" @blur="v$.email.$touch" v-model="v$.email.$model" type="email"
+                placeholder="Email giriniz" name="email">
+            <label class="form-error-text" v-if="v$.email.$error" for="email"><span class="material-icons">warning</span>{{
+                v$.email.$errors[0].$message }}</label>
+            <span class="material-icons input-icon">email</span>
         </div>
         <div class="form-group">
-            <label for="password">Parola</label>
-            <input type="password" style="font-family:'Roboto', sans-serif, FontAwesome; font-size: small;"
-                placeholder="&#xf084; Parolanızı giriniz" name="password">
+            <input :class="{ 'error': v$.password.$error }" @blur="v$.password.$touch" v-model="v$.password.$model"
+                type="password" placeholder="Parolanızı giriniz" name="password">
+            <label class="form-error-text" v-if="v$.password.$error" for="password"><span
+                    class="material-icons">warning</span>{{
+                        v$.password.$errors[0].$message }}</label>
+            <span class="material-icons input-icon">lock</span>
         </div>
         <button v-if="$route.fullPath === '/signin'">Giriş Yap</button>
         <button v-else-if="$route.fullPath === '/signup'">Kayıt Ol</button>
@@ -22,6 +27,28 @@
 </template>
 
 <script setup>
+import { reactive } from 'vue'
+import { useVuelidate } from '@vuelidate/core'
+import { required, email, minLength, helpers } from '@vuelidate/validators'
+
+const state = reactive({
+    email: '',
+    requiredNameLength: 8,
+    password: '',
+    requiredPasswordLength: 4,
+})
+const rules = {
+    email: {
+        required: helpers.withMessage('Bu alan zorunludur.', required),
+        email: helpers.withMessage('Geçerli bir mail adresi girmelisiniz.', email),
+        minLength: helpers.withMessage(`Minimum ${state.requiredNameLength} karakter girmelisiniz.`, minLength(state.requiredNameLength))
+    },
+    password: {
+        required: helpers.withMessage('Bu alan zorunludur.', required),
+        minLength: helpers.withMessage(`minimum ${state.requiredPasswordLength} karakter girmeilisiniz.`, minLength(state.requiredPasswordLength))
+    }
+}
+const v$ = useVuelidate(rules, state);
 </script>
 
 <style></style>

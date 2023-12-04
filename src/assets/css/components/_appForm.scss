@@ -3,43 +3,87 @@
 form {
     @extend %flex-nav;
     flex-direction: column;
-    justify-content: space-around !important;
+    justify-content: space-between !important;
+    gap: 15px;
     min-width: 100%;
     min-height: 100%;
     h1 {
         margin-top: 2.5rem;
         margin-bottom: 1.5rem;
         font-size: $xlFonts;
+
     }
     .form-group {
         @extend %flex-center;
         align-items: flex-start !important;
         flex-direction: column;
         min-width: inherit;
+        position: relative;
         input {
             @extend %input;
-            margin-bottom: 1.25rem;
             margin-top: 10px;
-            width: 100%;
-            background: rgba(240,240,240);
-            border-bottom: 1px solid rgb(201, 201, 201);
+            margin-bottom: 1.25rem;
+            padding: 20px 45px 20px 20px;
+            border: 2px solid rgba(255, 255, 255, .2) !important;
+            border-radius: 40px !important;
+            background: transparent;
             color: $sign-text-color;
             transition: all .2s ease;
-            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-            &:hover {
-                background: rgba($color: #ffffff, $alpha: 1);
+            &::placeholder {
+                color: white;
             }
-            &:focus {
-                background: rgba($color: #ffffff, $alpha: 1);
+            &:-internal-autofill-selected {
+                background: transparent;
+            }
+        }
+        .input-icon {
+            position: absolute;
+            top: 40%;
+            right: 30px;
+            transform: translateY(-40%);
+            font-size: $mediumFonts;
+        }
+        input.error {
+            border: 1px solid $validation-text-color !important;
+            background: $validation-inputBg-color;
+            color: $validation-text-color;
+        }
+        .form-error-text {
+            @extend %flex-center;
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            color: $validation-text-color;
+            font-size: $smallFonts;
+            .material-icons {
+                font-size: $smallFonts;
+                margin-right: 8px;
             }
         }
     }
     button {
         @extend %button;
+        width: 100%;
+        height: 50px;
+        font-weight: 700;
+        border-radius: 40px;
         margin-top: 1.5rem;
-
+        &:hover {
+            background-color: #ffffffb2;
+        }
     }
     p {
         margin: 1.5rem 0;
+        a {
+            text-decoration: none;
+            margin-left: 5px;
+            font-weight: bold;
+            color: $sign-text-color;
+            font-size: 18px;
+            transition: color .2s ease-in-out;
+            &:hover {
+                color: #c0c0c0;
+            }
+        }
     }
 }

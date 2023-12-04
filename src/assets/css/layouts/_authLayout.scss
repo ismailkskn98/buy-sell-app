@@ -2,23 +2,24 @@
         '../variables/index',
         '../media-query/media-query';
 .auth-layout-wrapper {
-    background: rgb(218,216,255);
-    background: linear-gradient(333deg, rgba(218,216,255,1) 0%, rgba(218,219,255,1) 35%, rgba(131,234,255,1) 100%);
+    height: 100vh;
+    background: $bg-color;
+    background: url('../../../../public/login-bg.jpg');
     .container {
         @extend %flex-center;
-        height: 100vh;
+        height: inherit;
         padding: 1.25rem;
         .form-box {
             @extend %flex-center;
-            background-color: $sign-bg-color;
-            color: $sign-text-color;
-            padding: 3rem;
-            border-radius: 3px;
-            max-width: 570px;
+            max-width: 500px;
             width: 100%;
-            max-height: 470px;
-            height: 90%;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding: 30px 40px;
+            border: 2px solid rgba(255, 255, 255, .2);
+            border-radius: 10px;
+            background-color: $sign-bg-color;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+            color: $sign-text-color;
             @include mobile {
                 padding: 1rem;
             }
