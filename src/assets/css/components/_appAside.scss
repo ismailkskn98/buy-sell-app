@@ -9,11 +9,11 @@ aside {
     ul {
         li{
             a {
+                margin: 0 -20px;
+                margin-bottom: 1rem;
+                padding: 1rem 20px;
                @extend %flex-center;
                justify-content: flex-start !important;
-               margin: 0 -20px;
-               margin-bottom: 1rem;
-               padding: 1rem 20px;
                color: $text-color;
                text-decoration: none;
                text-transform: capitalize;

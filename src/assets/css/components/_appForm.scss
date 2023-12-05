@@ -1,12 +1,13 @@
 @import '../extends/extends';
 @import '../variables/index';
 form {
+    min-width: 100%;
+    min-height: 100%;
+    position: relative;
     @extend %flex-nav;
     flex-direction: column;
     justify-content: space-between !important;
     gap: 15px;
-    min-width: 100%;
-    min-height: 100%;
     h1 {
         margin-top: 2.5rem;
         margin-bottom: 1.5rem;
@@ -14,16 +15,16 @@ form {
 
     }
     .form-group {
+        min-width: inherit;
+        position: relative;
         @extend %flex-center;
         align-items: flex-start !important;
         flex-direction: column;
-        min-width: inherit;
-        position: relative;
         input {
-            @extend %input;
             margin-top: 10px;
             margin-bottom: 1.25rem;
             padding: 20px 45px 20px 20px;
+            @extend %input;
             border: 2px solid rgba(255, 255, 255, .2) !important;
             border-radius: 40px !important;
             background: transparent;
@@ -44,30 +45,41 @@ form {
             font-size: $mediumFonts;
         }
         input.error {
-            border: 1px solid $validation-text-color !important;
             background: $validation-inputBg-color;
             color: $validation-text-color;
+            border: 2px solid $validation-text-color !important;
+        }
+        input.message {
+            background: transparent;
+            color: $validation-text-color;
+            border: 2px solid #198754 !important;
         }
         .form-error-text {
-            @extend %flex-center;
             position: absolute;
             bottom: 0;
             left: 20px;
+            @extend %flex-center;
             color: $validation-text-color;
             font-size: $smallFonts;
             .material-icons {
-                font-size: $smallFonts;
                 margin-right: 8px;
+                font-size: $smallFonts;
             }
         }
     }
+    p.message {
+        position: absolute;
+        bottom: 27%;
+        right: 32%;
+        color: #198754;
+    }
     button {
-        @extend %button;
         width: 100%;
         height: 50px;
+        margin-top: 1.5rem;
+        @extend %button;
         font-weight: 700;
         border-radius: 40px;
-        margin-top: 1.5rem;
         &:hover {
             background-color: #ffffffb2;
         }
@@ -75,8 +87,8 @@ form {
     p {
         margin: 1.5rem 0;
         a {
-            text-decoration: none;
             margin-left: 5px;
+            text-decoration: none;
             font-weight: bold;
             color: $sign-text-color;
             font-size: 18px;

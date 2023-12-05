@@ -1,8 +1,8 @@
 @import '../extends/extends';
 @import '../variables/index';
 header {
-    @extend %flex-nav;
     padding: 0 1.25rem;
+    @extend %flex-nav;
     background-color: $nav-bg-color;
     box-shadow: rgba(0, 0, 0, 0.15) 1px 3px 1px;
     .icon {
