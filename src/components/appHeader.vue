@@ -1,6 +1,7 @@
 <template>
     <header>
         <div class="icon"><span @click="closeNav()" class="material-icons">menu</span></div>
+        <RouterLink to="/signin">Login</RouterLink>
         <div class="login">login</div>
     </header>
 </template>
